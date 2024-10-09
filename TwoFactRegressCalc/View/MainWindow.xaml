@@ -9,11 +9,7 @@
         xmlns:polynomialDegrees="clr-namespace:TwoFactRegressCalc.Enums.PolynomialDegrees"
         d:DataContext="{d:DesignInstance Type={x:Type vm:MainViewModel} }"
         Title="{Binding Title}" Height="400" Width="400">
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
+   
     <Window.Resources>
         <Style x:Key="CustomButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#FF4080C9"/>
@@ -23,6 +19,7 @@
             <Setter Property="Padding" Value="10,5"/>
             <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="14"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -75,22 +72,24 @@
                     Command ="{Binding СalcFromExсelCommand}">
             </Button>
 
-            <TextBlock  Grid.Row="2">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
+            <TextBox  Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="FontFamily" Value="Arial" />
+                        <Setter Property="FontSize" Value="14" />
                         <Setter Property="Text" Value="-" />
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding DegreeSelected}" Value="{x:Static polynomialDegrees:Degree.Two}">
-                                <Setter Property="Text" Value="Two" />
+                                <Setter Property="Text" Value="a0 + a1 * X2 + a2 * X2*X2 + a3 * X1 + a4 * X1*X1 + a5 * X1 * X2 + a6 * X2 * X1 * X1 + a7 * X2*X2 * X1 + a8 * X1*X1 * X2*X2" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding DegreeSelected}" Value="{x:Static polynomialDegrees:Degree.Three}">
-                                <Setter Property="Text" Value="Three" />
+                                <Setter Property="Text" Value="a0 + a1 * X2 + a2 * X2*X2 + a3 * X1 + a4 * X1*X1 + a5 * X1 * X2 + a6 * X2 * X1 * X1 + a7 * X2 * X2 * X1 + a8 * X1 * X1 * X2*X2 + a9 * X1*X1*X1 + a10 * X2 * X1*X1*X1 + a11 * X2*X2 * X1*X1*X1 + a12 * X2*X2*X2 + a13 * X2*X2*X2 * X1 + a14 * X2*X2*X2 * X1*X1 + a15 * X2*X2*X2 * X1*X1*X1"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </TextBlock.Style>
+                </TextBox.Style>
 
-            </TextBlock>
+            </TextBox>
 
            
 

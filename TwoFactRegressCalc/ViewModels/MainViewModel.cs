@@ -175,10 +175,11 @@ namespace TwoFactRegressCalc.ViewModels
                 switch (i)
                 {
                     case 0:
+                        //a0 +
                         res += resultCheckedCoef[i];
                         break;
                     case 1:
-                        //a1* item.X2
+                        //a1* item.X2 +
                         res += resultCheckedCoef[i] * data.X2;
                         break;
                     case 2:
