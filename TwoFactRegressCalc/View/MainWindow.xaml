@@ -1,0 +1,102 @@
+﻿<Window x:Class="TwoFactRegressCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwoFactRegressCalc"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:vm="clr-namespace:TwoFactRegressCalc.ViewModels"
+        xmlns:polynomialDegrees="clr-namespace:TwoFactRegressCalc.Enums.PolynomialDegrees"
+        d:DataContext="{d:DesignInstance Type={x:Type vm:MainViewModel} }"
+        Title="{Binding Title}" Height="400" Width="400">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Window.Resources>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF4080C9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF4080C9"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF60A0E0"/>
+                    <Setter Property="BorderBrush" Value="#FF60A0E0"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF305070"/>
+                    <Setter Property="BorderBrush" Value="#FF305070"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel 
+                Orientation="Horizontal"
+                Margin="4">
+                <TextBlock Margin="0 0 5 0">
+                    The degree of the polynomial
+                </TextBlock>
+                <ComboBox 
+                    ItemsSource="{Binding Degrees}"
+                    SelectedItem="{Binding DegreeSelected}">
+                </ComboBox>
+            </StackPanel>
+            <Button Grid.Row="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="RUN"
+                    FontSize="30"
+                    Style="{StaticResource CustomButtonStyle}"
+                    Command ="{Binding СalcFromExсelCommand}">
+            </Button>
+
+            <TextBlock  Grid.Row="2">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="-" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DegreeSelected}" Value="{x:Static polynomialDegrees:Degree.Two}">
+                                <Setter Property="Text" Value="Two" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding DegreeSelected}" Value="{x:Static polynomialDegrees:Degree.Three}">
+                                <Setter Property="Text" Value="Three" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+
+            </TextBlock>
+
+           
+
+
+        </Grid>
+
+
+    </Grid>
+</Window>
