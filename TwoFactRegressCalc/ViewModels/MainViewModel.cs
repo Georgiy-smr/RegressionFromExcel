@@ -87,11 +87,11 @@ namespace TwoFactRegressCalc.ViewModels
 
         #region CalcFromExel Расчет из файла эксель
 
-        private ICommand? _сalcFromExelCommand;
+        private ICommand? _salveCommand;
 
 
-        public ICommand СalcFromExсelCommand =>
-            _сalcFromExelCommand ?? new LambdaCommandAsync(OnCalcFromExelCommandExecuted, CanCalcFromExelCommandExecute);
+        public ICommand SalveCommand =>
+            _salveCommand ??= new LambdaCommandAsync(OnCalcFromExelCommandExecuted, CanCalcFromExelCommandExecute);
 
         private async Task OnCalcFromExelCommandExecuted(object arg)
         {
@@ -104,7 +104,7 @@ namespace TwoFactRegressCalc.ViewModels
             if(dataRead.Count <= _minCount)
                 return;
 
-            var result = _regression.CalcCoefs(GetExpression(dataRead)).ToArray();
+            var result = _regression.Calc(GetExpression(dataRead)).ToArray();
             
           
             if (result!.Any())

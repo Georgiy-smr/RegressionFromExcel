@@ -69,7 +69,7 @@
                     Content="RUN"
                     FontSize="30"
                     Style="{StaticResource CustomButtonStyle}"
-                    Command ="{Binding СalcFromExсelCommand}">
+                    Command ="{Binding SalveCommand}">
             </Button>
 
             <TextBox  Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True">

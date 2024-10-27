@@ -85,7 +85,7 @@ namespace TwoFactRegressCalc.Infrastructure.DI.Services.Readers
             double currentX1 = 0;
             double currentX2 = 0;
             double currentY = 0;
-            for (int row = 2; row <= rowCount; row++)
+            for (int row = 1; row <= rowCount; row++)
             {
                 await Task.Run(() =>
                 {
