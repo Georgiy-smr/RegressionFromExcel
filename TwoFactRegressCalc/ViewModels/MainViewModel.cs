@@ -75,7 +75,7 @@ namespace TwoFactRegressCalc.ViewModels
         {
             if (!_dergreeExpression.TryGetValue(DegreeSelected, out Func<List<DataTwoFact>, IPolynomialExpression>? value))
                 throw new NotSupportedException();
-            return value.Invoke(data);
+            return value(data);
         }
 
         private int _minCount => DegreeSelected switch

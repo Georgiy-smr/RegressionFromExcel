@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoFactRegressCalc", "TwoFactRegressCalc\TwoFactRegressCalc.csproj", "{2263640B-5637-49FD-A5C0-A0010C243A14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoFactRegressCalc", "TwoFactRegressCalc\TwoFactRegressCalc.csproj", "{2263640B-5637-49FD-A5C0-A0010C243A14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple exemple  regression calc", "Simple exemple  regression calc\Simple exemple  regression calc.csproj", "{CFE38665-C19C-4226-8748-A4D84BC806F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRegression", "TestRegression\TestRegression.csproj", "{415D6A17-1F80-4D4B-A3B2-B00E465A701D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2263640B-5637-49FD-A5C0-A0010C243A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2263640B-5637-49FD-A5C0-A0010C243A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2263640B-5637-49FD-A5C0-A0010C243A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE38665-C19C-4226-8748-A4D84BC806F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE38665-C19C-4226-8748-A4D84BC806F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE38665-C19C-4226-8748-A4D84BC806F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE38665-C19C-4226-8748-A4D84BC806F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415D6A17-1F80-4D4B-A3B2-B00E465A701D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415D6A17-1F80-4D4B-A3B2-B00E465A701D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415D6A17-1F80-4D4B-A3B2-B00E465A701D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415D6A17-1F80-4D4B-A3B2-B00E465A701D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

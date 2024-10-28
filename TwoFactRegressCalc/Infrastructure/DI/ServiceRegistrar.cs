@@ -37,7 +37,6 @@ namespace TwoFactRegressCalc.Infrastructure.DI
         internal static IServiceCollection FileDialog(this ServiceCollection service) =>
             service.AddTransient<IDialogService, FileDialogService>();
 
-
         internal static IServiceCollection Regression(this ServiceCollection service) =>
             service.AddTransient<IRegression<DataTwoFact>, TwoFactRegressionService>();
 

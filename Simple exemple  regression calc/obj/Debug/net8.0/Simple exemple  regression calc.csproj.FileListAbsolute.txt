@@ -1,0 +1,37 @@
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\Simple exemple  regression calc.exe
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\Simple exemple  regression calc.deps.json
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\Simple exemple  regression calc.runtimeconfig.json
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\Simple exemple  regression calc.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\Simple exemple  regression calc.pdb
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\FParsec.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\FParsecCS.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\FSharp.Core.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\MathNet.Numerics.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\MathNet.Numerics.FSharp.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\MathNet.Symbolics.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\Regression.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\cs\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\de\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\es\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\fr\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\it\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\ja\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\ko\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\pl\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\pt-BR\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\ru\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\tr\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\zh-Hans\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\bin\Debug\net8.0\zh-Hant\FSharp.Core.resources.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.csproj.AssemblyReference.cache
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.AssemblyInfoInputs.cache
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.AssemblyInfo.cs
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.csproj.CoreCompileInputs.cache
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.sourcelink.json
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple e.005A6AAC.Up2Date
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\refint\Simple exemple  regression calc.dll
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.pdb
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\Simple exemple  regression calc.genruntimeconfig.cache
+C:\Users\Анна\Regression\Simple exemple  regression calc\obj\Debug\net8.0\ref\Simple exemple  regression calc.dll
