@@ -13,12 +13,13 @@ namespace TestRegression
 {
     public class AproxServiceTests
     {
-        private IRegressionAnalysisService _testService;
+        private IRegressionAnalysisService sut;
        
 
         [Fact]
-        public void CalcTwoFactorCoefs()
+        public void Error_calculating_random_data_less_then_one_percent()
         {
+            //arrange
             var a0 = SymbolicExpression.Variable("a0");
             var a1 = SymbolicExpression.Variable("a1");
             var a2 = SymbolicExpression.Variable("a2");
@@ -36,10 +37,10 @@ namespace TestRegression
             var a14 = SymbolicExpression.Variable("a14");
             var a15 = SymbolicExpression.Variable("a15");
 
-            IEnumerable<DataTwoFact> X1X2toY = GetRandomToFactData(20);
+            IEnumerable<DataTwoFact> randomDataX1X2toY = GetRandomToFactData(20);
             
             SymbolicExpression poly = 0;
-            foreach (var item in X1X2toY)
+            foreach (var item in randomDataX1X2toY)
             {
                 var expr = item.Y +
                            (a0 +
@@ -61,87 +62,87 @@ namespace TestRegression
                 poly += expr * expr;
             }
 
-            _testService = new ApproximationService(new Solver(),
+            sut = new ApproximationService(new Solver(),
                     new RowParser(), new DerivativeCalculator());
             //инициализация данных
             IPolynomialExpression polinomial = new VariableExpression(poly, new List<SymbolicExpression>
                    {a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15});
-            //получение данных
-            var resultCheckedBytes = _testService.GetValues(polinomial).ToArray();
-            double res = 0;
-            var data = X1X2toY.Last();
-            for (int i = 0; i < resultCheckedBytes.Count(); i++)
+            //act
+            double[] pollynominalCoefficients = sut.GetValues(polinomial).ToArray();
+            double testedResult = 0;
+            var expected = randomDataX1X2toY.Last();
+            for (int i = 0; i < pollynominalCoefficients.Count(); i++)
             {
                 switch (i)
                 {
                     case 0:
-                        res += resultCheckedBytes[i];
+                        testedResult += pollynominalCoefficients[i];
                         break;
                     case 1:
                         //a1* item.X2
-                        res += resultCheckedBytes[i] * data.X2;
+                        testedResult += pollynominalCoefficients[i] * expected.X2;
                         break;
                     case 2:
                         //a2* item.X2* item.X2 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X2;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2;
                         break;
                     case 3:
                         //a3* item.X1 +
-                        res += resultCheckedBytes[i] * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X1;
                         break;
                     case 4:
                         //   a4 * item.X1 * item.X1 +
-                        res += resultCheckedBytes[i] * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X1 * expected.X1;
                         break;
                     case 5:
                         //a5 * item.X1 * item.X2 +
-                        res += resultCheckedBytes[i] * data.X1 * data.X2;
+                        testedResult += pollynominalCoefficients[i] * expected.X1 * expected.X2;
                         break;
                     case 6:
                         // a6* item.X2* item.X1* item.X1 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X1 * expected.X1;
                         break;
                     case 7:
                         //a7* item.X2* item.X2* item.X1 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X2 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2 * expected.X1;
                         break;
                     case 8:
                         //a8* item.X1* item.X1* item.X2* item.X2 +
-                        res += resultCheckedBytes[i] * data.X1 * data.X1 * data.X2 * data.X2;
+                        testedResult += pollynominalCoefficients[i] * expected.X1 * expected.X1 * expected.X2 * expected.X2;
                         break;
                     case 9:
                         //a9* item.X1* item.X1* item.X1 +
-                        res += resultCheckedBytes[i] * data.X1 * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X1 * expected.X1 * expected.X1;
                         break;
                     case 10:
                         //a10* item.X2* item.X1* item.X1* item.X1 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X1 * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X1 * expected.X1 * expected.X1;
                         break;
                     case 11:
                         //a11* item.X2* item.X2* item.X1* item.X1* item.X1 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X2 * data.X1 * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2 * expected.X1 * expected.X1 * expected.X1;
                         break;
                     case 12:
                         //a12* item.X2* item.X2* item.X2 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X2 * data.X2;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2 * expected.X2;
                         break;
                     case 13:
                         //a13* item.X2* item.X2* item.X2* item.X1 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X2 * data.X2 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2 * expected.X2 * expected.X1;
                         break;
                     case 14:
                         //a14* item.X2* item.X2* item.X2* item.X1* item.X1 +
-                        res += resultCheckedBytes[i] * data.X2 * data.X2 * data.X2 * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2 * expected.X2 * expected.X1 * expected.X1;
                         break;
                     case 15:
                         //a15* item.X2* item.X2* item.X2* item.X1* item.X1* item.X1);
-                        res += resultCheckedBytes[i] * data.X2 * data.X2 * data.X2 * data.X1 * data.X1 * data.X1;
+                        testedResult += pollynominalCoefficients[i] * expected.X2 * expected.X2 * expected.X2 * expected.X1 * expected.X1 * expected.X1;
                         break;
                 }
             }
 
-            Assert.True(resultCheckedBytes.Any());
-
+            var err = 100 * Math.Abs(expected.Y - testedResult) / expected.Y;
+            Assert.True(err < 1);
         }
 
 
@@ -153,8 +154,8 @@ namespace TestRegression
                 .CreateThirdOrderPolynomialExpression();
 
 
-            _testService = new ApproximationService(new Solver(), new RowParser(), new DerivativeCalculator());
-            var resultCheckedBytes = _testService.GetValues(testedExpression).ToArray();
+            sut = new ApproximationService(new Solver(), new RowParser(), new DerivativeCalculator());
+            var resultCheckedBytes = sut.GetValues(testedExpression).ToArray();
             Assert.True(resultCheckedBytes.Any());
         }
 

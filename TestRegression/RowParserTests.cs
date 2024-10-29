@@ -8,11 +8,11 @@ namespace TestRegression
     public class RowParserTests
 
     {
-        private readonly IRowsParser _parser = new RowParser();
+      
         private readonly IDerivatives _derivatives = new DerivativeCalculator();
-        public void GetRowInputResultTrue()
+        public void Parse_String_Expretion_To_Array_Numeric()
         {
-            //Вычисление производных
+            IRowsParser sut = new RowParser();
             var a2 = SymbolicExpression.Variable("a2");
             var a1 = SymbolicExpression.Variable("a1");
             Dictionary<double, double> XtoY = new Dictionary<double, double>()
@@ -27,12 +27,11 @@ namespace TestRegression
             }
             var diffs = _derivatives.Calculate(
                 new VariableExpression(poly, new List<SymbolicExpression> { a2, a1 }));
-            //получаем эталоный массив
             var trueArray = GetArrayParseX(diffs.First()).ToArray();
-            //получаем проверяемый массив
-            var check = _parser.GetRowInput(diffs.First(), 2);
 
-            Assert.True(trueArray.SequenceEqual(check));
+            IEnumerable<double> result = sut.GetRowInput(diffs.First(), 2);
+
+            Assert.True(trueArray.SequenceEqual(result));
         }
 
         private static IEnumerable<double> GetArrayParseX(string[] strings)

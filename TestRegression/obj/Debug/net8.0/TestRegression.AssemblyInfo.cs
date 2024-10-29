@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestRegression")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6ed4aed4f190d2afe4175b91d789dc4d32e35ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9891099f4acf8eca48448ecafe3168cda9f3af30")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestRegression")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestRegression")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

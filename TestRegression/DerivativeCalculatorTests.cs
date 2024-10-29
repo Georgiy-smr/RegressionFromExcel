@@ -11,11 +11,10 @@ namespace TestRegression
 {
     public class DerivativeCalculatorTests
     {
-        private readonly IDerivatives _derivatives = new DerivativeCalculator();
         [Fact]
-        public void CalcLinearPolinomialResultTrue()
+        public void Differentiation_Symbolic_Expression()
         {
-            //Вычисление частной производной dpdk
+            IDerivatives sut = new DerivativeCalculator();
             var a2 = SymbolicExpression.Variable("a2");
             var a1 = SymbolicExpression.Variable("a1");
             Dictionary<double, double> XtoY = new Dictionary<double, double>()
@@ -28,15 +27,12 @@ namespace TestRegression
                 var expr = item.Value + (a1 * item.Key + a2);
                 poly += expr * expr;
             }
-            var dpdk = poly.Differentiate(a2).RationalSimplify(a2).ToString().Trim().Split();
-            //вычисление производной через сервис
+            var Expected = poly.Differentiate(a2).RationalSimplify(a2).ToString().Trim().Split();
 
-            var tested = _derivatives.Calculate(
+            var testedResult = sut.Calculate(
                 new VariableExpression(poly, new List<SymbolicExpression> { a2, a1 }));
 
-            Assert.True(dpdk.SequenceEqual(tested.First()));
-
-
+            Assert.True(Expected.SequenceEqual(testedResult.First()));
         }
     }
 }
